@@ -1,0 +1,120 @@
+/*
+Lauren Dwyer
+Last edited: 25/03/2025
+Version 2
+*/
+
+/* Reset default margin/padding and set global font */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Define CSS variables (custom properties) for consistent theming */
+:root {
+    --orange: #ff8c00;
+    --orange-light: #ffa94d;
+    --gray-bg: #f4f4f4;
+    --white: #ffffff;
+    --text-dark: #333;
+    --border: #ddd;
+}
+
+/* Outer container that centers the login box vertically and horizontally */
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #ffe5cc, #fff7f0); /* Soft orange gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login form wrapper box */
+.box {
+    width: 360px;
+    background-color: var(--white);
+    border: 2px solid var(--orange-light);
+    padding: 35px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+}
+
+/* Heading style */
+h2 {
+    font-size: 28px;
+    color: var(--orange);
+    margin-bottom: 20px;
+}
+
+/* Wrapper for each input field */
+.input_box {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Input field styling */
+.input_box input {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    background-color: #fffaf5;
+    transition: border-color 0.3s;
+}
+
+/* Highlight input border on focus */
+.input_box input:focus {
+    border-color: var(--orange);
+    outline: none;
+}
+
+/* Placeholder text style */
+.input_box input::placeholder {
+    color: #aaa;
+}
+
+/* Login button style */
+.login_button {
+    width: 100%;
+    background: var(--orange);
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover effect for login button */
+.login_button:hover {
+    background: var(--orange-light);
+    color: black;
+}
+
+/* Click effect for login button */
+.login_button:active {
+    transform: scale(0.97);
+}
+
+/* Utility class to hide elements */
+.hidden {
+    display: none;
+}
+
+/* Utility class for full-screen iframe or modal */
+.full-screen {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: none;
+}

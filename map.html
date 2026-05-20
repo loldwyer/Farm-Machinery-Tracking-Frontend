@@ -1,0 +1,64 @@
+<!---
+Lauren Dwyer
+Last edited: 02/04/2025
+Version 4 - emoji status markers that are clickable
+--->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata and page configuration -->
+    <meta charset="UTF-8">
+    <title>Factory Map</title>
+
+    <!-- Main stylesheet for shared styling -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Optional internal styling for layout control -->
+    <style>
+        body {
+            text-align: center;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation bar at the top -->
+    <header class="navbar">
+        <h1 id="dashboard-title">Dashboard</h1>
+
+        <!-- Top navigation links -->
+        <nav class="nav-links">
+            <!-- Navigates to the main dashboard -->
+            <a href="dashboard.html" class="nav-link">Home</a>
+            <!-- Refreshes or stays on this map view -->
+            <a href="map.html" class="nav-link">View Full Map</a>
+            <!-- Changes role by going to login -->
+            <a href="login.html" onclick="logout()" class="nav-link">Change Role</a>
+            <!-- Triggers logout logic and returns to home -->
+            <a onclick="logout()">Log Out</a>
+        </nav>
+    </header>
+
+    <!-- Map heading and instructional text -->
+    <h2>DCU Campus Map – Machine Locations</h2>
+    <p>Click a machine icon to view details.</p>
+
+    <!-- Map container displaying campus and markers -->
+    <div class="machine-map" style="max-width: 1000px; margin: 2rem auto;">
+        <!-- Background image of the DCU campus -->
+        <img src="images/Glasnevin-Map.jpg" alt="DCU Campus Map" />
+        <!-- Tooltip div that appears on marker click -->
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+
+    <!-- Script that generates status markers on the map -->
+    <script src="../Java Script Client Side/javascript/map.js"></script>
+
+    <!-- Script that controls user role logic, logout, and dashboard title -->
+    <script src="../Java Script Client Side/javascript/dashboard.js"></script>
+
+</body>
+</html>

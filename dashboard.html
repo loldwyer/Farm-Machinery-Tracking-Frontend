@@ -1,0 +1,115 @@
+<!---
+Lauren Dwyer
+Last edited: 07/04/2025
+Role-aware dashboard with map
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Standard meta setup for responsive layout -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Dashboard</title>
+    
+    <!-- Link to main stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<!-- Navigation Header -->
+<header class="navbar">
+    <h1 id="dashboard-title">Dashboard</h1>
+
+    <!-- Navigation links -->
+    <nav class="nav-links">
+        <a href="dashboard.html" class="nav-link">Dashboard Home</a>
+        <a href="map.html" class="nav-link">View Full Map</a>
+        <a href="login.html" onclick="logout()" class="nav-link">Change Role</a>
+        <a onclick="logout()">Back to Main Webpage</a>
+    </nav>
+</header>
+
+<!-- Main container for dashboard content -->
+<div class="container">
+
+    <!-- Manager-only: Form to Add a New Machine -->
+    <section class="section full-width">
+
+        <!-- Form to add machine (visible only to managers via JS) -->
+        <div class="add-machine">
+            <form id="admin-add-machine-form">
+                <!-- Machine name input -->
+                <input type="text" id="admin-machine-name" placeholder="Machine Name" required />
+
+                <!-- Status selection -->
+                <select id="admin-machine-status" required>
+                    <option value="OK">✅ OK</option>
+                    <option value="Warning">⚠️ Warning</option>
+                    <option value="Fault">❌ Fault</option>
+                </select>
+
+                <!-- Building location selection -->
+                <select id="admin-machine-building" required>
+                    <option value="" disabled selected>Select Building</option>
+                    <option value="Lonsdale">Lonsdale</option>
+                    <option value="Stokes">Stokes</option>
+                    <option value="Nursing">Nursing</option>
+                    <option value="Business School">Business School</option>
+                    <option value="Library">Library</option>
+                    <option value="Albert College">Albert College</option>
+                    <option value="Marconi">Marconi</option>
+                    <option value="The Helix">The Helix</option>
+                </select>
+
+                <!-- Submit button -->
+                <button type="submit">➕ Add Machine</button>
+            </form>
+        </div>
+
+        <!-- Placeholder for future technician report section -->
+        <!--- NEED TO ADD: Technician reports --->
+
+        <!-- Side-by-side layout: Machine table and campus map -->
+        <div class="machine-map-wrapper">
+
+            <!-- Machine List Table -->
+            <div class="machine-table-container">
+                <table class="machine-table">
+                    <thead>
+                        <tr>
+                            <th>Machine</th>
+                            <th>Status</th>
+                            <th>Location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows populated dynamically by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Campus Map with status markers -->
+            <div class="machine-map">
+                <img src="images/Glasnevin-Map.jpg" alt="DCU Campus Map" />
+                <div id="tooltip" class="tooltip"></div> <!-- Tooltip for machine info -->
+            </div>
+
+        </div> <!-- end of machine-map-wrapper -->
+
+    </section> <!-- end of section -->
+
+</div> <!-- end of container -->
+
+<!-- JavaScript functionality for dashboard logic -->
+<script src="../Java Script Client Side/javascript/dashboard.js"></script>
+<script src="../Java Script Client Side/javascript/include-html.js"></script>
+<script src="../Java Script Client Side/javascript/toggle-brightness.js"></script>
+<script src="../Java Script Client Side/javascript/machinery.js"></script>
+<script src="../Java Script Client Side/javascript/map.js"></script>
+
+</body>
+</html>

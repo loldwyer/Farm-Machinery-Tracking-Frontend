@@ -1,0 +1,211 @@
+/* Eddie Klai
+*/
+/* Machine table */
+.machine-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: var(--card-bg); /* Card background */
+    color: var(--text-color); /* Text color based on the theme */
+}
+
+.machine-section {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+.machine-table th,
+.machine-table td {
+    border: 1px solid var(--glass-border); /* Light border */
+    padding: 10px;
+    text-align: center;
+}
+
+.machine-table th {
+    background-color: var(--accent-orange);
+    color: var(--text-color);
+}
+
+.machine-table .btn-details {
+    background-color: var(--secondary-blue);
+}
+
+.machine-table .btn-edit {
+    background-color: var(--accent-orange);
+}
+
+.machine-table .btn-details, .btn-edit {
+    display: inline-block;
+    color: var(--text-color);
+    padding: 5px 10px;
+    width: 20%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.machine-table td .status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Status styles */
+.status.ok {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.status.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.status.fault {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Add machine form */
+.add-machine {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+}
+
+.add-machine input,
+.add-machine select,
+.add-machine button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid var(--glass-border);
+    border-radius: 5px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.add-machine button {
+    background-color: var(--primary-blue);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.add-machine button:hover {
+    background-color: #0056b3; /* Slightly darker color */
+}
+
+/* Modale */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--primary-blue); 
+    padding: 20px;
+    border-radius: 12px; 
+    width: 40%; 
+    max-width: 600px; 
+    color: var(--text-color); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+    animation: fadeIn 0.3s ease-in-out; 
+    position: relative; 
+    
+}
+
+/* Header for the modal */
+.modal-content h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-color); /* Accent color for the title */
+    border-bottom: 1px solid var(--glass-border); /* Subtle divider */
+    padding-bottom: 10px;
+}
+
+/* Close button */
+.close-btn {
+    color: var(--text-color);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+    color: #ff4d4d;
+}
+
+/* Content inside the modal */
+.modal-content p {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Add a fade-in animation for the modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 800px) {
+    .machine-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .machine-table th,
+    .machine-table td {
+        font-size: 14px;
+    }
+
+    .add-machine input,
+    .add-machine select,
+    .add-machine button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%; /* Take up more space on smaller screens */
+        padding: 20px;
+    }
+
+    .modal-content h3 {
+        font-size: 1.5rem;
+    }
+}

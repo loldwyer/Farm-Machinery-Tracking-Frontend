@@ -1,0 +1,165 @@
+/*
+Lauren Dwyer
+Last edited: 04/04/2025
+*/
+/* ---------------------------------------------
+   Navigation Bar Styles
+---------------------------------------------- */
+
+/* Main navbar container */
+.navbar {
+    background-color: var(--primary-blue); /* navy background */
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* wrap for smaller screens */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* drop shadow */
+}
+
+/* Logo text style */
+.logo h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Container for nav links */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Individual nav link */
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.2s ease-in-out;
+}
+
+/* Hover state for nav links */
+.nav-link:hover {
+    color: var(--accent-orange); /* highlight on hover */
+}
+
+/* Logout button style */
+.logout-btn {
+    background-color: #d9534f; /* Bootstrap-style red */
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+/* Hover effect for logout button */
+.logout-btn:hover {
+    background-color: #c9302c; /* darker red */
+}
+
+/* ---------------------------------------------
+   Responsive Design for Navbar
+---------------------------------------------- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* stack nav vertically */
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .logout-btn {
+        align-self: flex-end;
+    }
+}
+
+/* ---------------------------------------------
+   Section and Layout Styling
+---------------------------------------------- */
+
+/* Full-width section styling with no padding */
+.section.full-width {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 2rem 4vw;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Flex wrapper to position table and map side-by-side */
+.machine-map-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    align-items: stretch;
+    width: 100%;
+}
+
+/* Table column (left side) */
+.machine-table-container {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+
+/* Map container (right side) */
+.machine-map {
+    flex: 1 1 55%;
+    position: relative;
+    min-width: 400px;
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Ensures map image fills container */
+.machine-map img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Emoji or pin marker for machine status */
+.machine-marker {
+    position: absolute;
+    width: 24px;
+    height: 32px;
+    transform: translate(-50%, -100%); /* center + above point */
+    cursor: pointer;
+    z-index: 5;
+    font-size: 1.2em;
+}
+
+/* Tooltip to show machine details */
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    display: none;
+    pointer-events: none;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .machine-map-wrapper {
+        flex-direction: column;
+    }
+}

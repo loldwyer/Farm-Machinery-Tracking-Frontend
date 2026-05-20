@@ -1,0 +1,33 @@
+<!---
+Lauren Dwyer
+Last edited: 03/03/2025
+--->
+
+<!-- Main container for the floating chatbot interface -->
+<div class="chatbot">
+
+    <!-- Chat header bar (clickable to expand/collapse the chat window) -->
+    <div class="chat-header" onclick="toggleChat()">
+        <!-- Chat title text -->
+        <p>💬 AI Assistant</p>
+        <!-- Icon that indicates toggle state (e.g., ^ for open, symbol turns upside when closed) -->
+        <span class="toggle-icon">^</span>
+    </div>
+
+    <!-- Main body of the chat interface (hidden by default, shown on toggle) -->
+    <div class="chat-body">
+        
+        <!-- Container for chat messages -->
+        <div class="chat-messages">
+            <!-- Initial bot greeting message -->
+            <p class="chat-bot">Hello! How can I assist you?</p>
+        </div>
+
+        <!-- Text input where user types a message -->
+        <input type="text" id="chat-input" aria-label="chat-input" placeholder="Type a message..." >
+
+        <!-- Button to submit user input to the bot -->
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+</div>

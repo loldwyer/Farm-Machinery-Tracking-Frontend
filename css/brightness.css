@@ -1,0 +1,123 @@
+/*
+Lauren Dwyer
+Last edited: 04/04/2025
+*/
+
+/* ------------------------------
+   Dark Theme Overrides
+   Applied when [data-theme="dark"] is set on <html>
+-------------------------------- */
+[data-theme="dark"] {
+    --primary-blue: #121212;         /* Very dark background for nav/footer */
+    --secondary-blue: #1e1e2f;       /* Panels, cards, and boxes */
+    --accent-orange: #ff8c00;        /* Highlight color (unchanged) */
+    --light-gray: #1c1c1c;           /* Slightly lighter background */
+    --dark-gray: #0f0f0f;            /* Overall background */
+    --glass-bg: rgba(255, 255, 255, 0.05); /* Glassy backgrounds */
+    --glass-border: rgba(255, 255, 255, 0.1); /* Subtle border around glass UI */
+    color-scheme: dark;              /* Let browsers adjust native UI (inputs/scrollbars) */
+}
+
+/* Set dark background + text for major sections */
+[data-theme="dark"] body,
+[data-theme="dark"] main,
+[data-theme="dark"] .features,
+[data-theme="dark"] .how-it-works,
+[data-theme="dark"] .chat-bot,
+[data-theme="dark"] .team {
+    background-color: var(--dark-gray);
+    color: #f5f5f5; /* Light text for contrast */
+}
+
+/* Set dark background for header/footer/chat header */
+[data-theme="dark"] header,
+[data-theme="dark"] footer,
+[data-theme="dark"] .chat-header {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* Card elements (glass effect) */
+[data-theme="dark"] .hero-content,
+[data-theme="dark"] .feature,
+[data-theme="dark"] .step,
+[data-theme="dark"] .team-list li {
+    background-color: var(--secondary-blue);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Chat styling for user and bot messages */
+[data-theme="dark"] .chat-user {
+    background: var(--accent-orange);
+    color: black;
+}
+
+[data-theme="dark"] .chat-bot {
+    background: #292c35;
+    color: white;
+}
+
+
+/* ------------------------------
+   Light Theme Overrides
+   Applied when [data-theme="light"] is set on <html>
+-------------------------------- */
+[data-theme="light"] {
+    --primary-blue: #f9f9f9;             /* Light header/footer background */
+    --secondary-blue: #e4e4e4;           /* Panels and content containers */
+    --accent-orange: #e86e00;            /* Slightly darker orange for contrast */
+    --light-gray: #ffffff;               /* Full white for backgrounds */
+    --dark-gray: #f2f2f2;                /* Section backgrounds */
+    --glass-bg: rgba(255, 255, 255, 0.8);/* Light glass look */
+    --glass-border: rgba(0, 0, 0, 0.1);   /* Subtle dark border for contrast */
+    
+    color-scheme: light; /* Inform browser to adjust UI (e.g. inputs) for light theme */
+}
+
+/* Set light background and dark text */
+[data-theme="light"] body,
+[data-theme="light"] main,
+[data-theme="light"] .features,
+[data-theme="light"] .how-it-works,
+[data-theme="light"] .chat-bot {
+    color: #333;
+    background-color: var(--light-gray);
+}
+
+/* Header/footer/chat header in orange theme */
+[data-theme="light"] header,
+[data-theme="light"] footer,
+[data-theme="light"] .chat-header {
+    background-color: var(--accent-orange);
+    color: white;
+}
+
+/* Card-style elements (hero, features, steps) */
+[data-theme="light"] .hero-content,
+[data-theme="light"] .feature,
+[data-theme="light"] .step {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+}
+
+/* Chat bubbles */
+[data-theme="light"] .chat-user {
+    background: #ffcf91;
+    color: black;
+}
+
+/* Theme toggle (e.g. 🌙 button) appearance and hover */
+[data-theme="light"] .brightness-toggle {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+[data-theme="light"] .brightness-toggle:hover {
+    color: black;
+}
+
+/* Input text in chat (black text for visibility in light mode) */
+[data-theme="light"] #chat-input {
+    color: black;
+}
