@@ -1,6 +1,9 @@
 Created by: Lauren Dwyer
+
 View: https://loldwyer.github.io/Farm-Machinery-Tracking-Frontend/
+
 Video of frontend in operation: https://youtu.be/GF3-h9Xe-a4?si=x71L7mqTtwjYx_Sl
+
 # Farm Machinery Tracker Front-End
 
 A responsive front-end web application for tracking and managing farm/factory machinery information. This project was completed as part of a group project, where I was responsible for the front-end development, including the HTML, CSS and client-side JavaScript implementation.
